@@ -19,7 +19,7 @@ app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
 
-pp.post('/naam',(req,res)=>{
+app.post('/naam',(req,res)=>{
     naam = ((req.body.name).toUpperCase()).replace(/\s/g, '');
     console.log(naam)
     ///this is better than db, trust me bro
@@ -262,7 +262,7 @@ pp.post('/naam',(req,res)=>{
                 }
                 console.log(f)
             if (f==0){
-            res.sendFile(path.join(__dirname + '/login.html'));
+            res.sendFile(path.join(__dirname + '/actual.html'));
             s=1
             logname(naam)
             
