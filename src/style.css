@@ -56,3 +56,11 @@ header{
     position: absolute;
     width: 100%;
 }
+
+
+#tiktok{
+    position: absolute;
+    right: 0;
+    font-size:large;
+    display: flex;
+}
