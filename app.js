@@ -23,222 +23,7 @@ app.post('/naam',(req,res)=>{
     naam = ((req.body.name).toUpperCase()).replace(/\s/g, '');
     console.log(naam)
     ///this is better than db, trust me bro
-    const namesArray = [
-        "RUSHANBASU",
-        "SUBHAYANNIYOGI",
-        "SOUMYABRATABHATTACHARJEE",
-        "PARTHIVPAL",
-        "MDNAUMAANKHAN",
-        "ANJISHNUDEY",
-        "AYUSHBISWAS",
-        "DARSHBHALOTIA",
-        "SOHAMSAHA",
-        "ANSHUMANTRIPATHY",
-        "VAIBHAVPRASAD",
-        "DIPTANSUROY",
-        "SWARANYAGUPTA",
-        "ARGHYASARKAR",
-        "SOHAMNANDY",
-        "SHABDIKKUNDU",
-        "ANIKETPANDEY",
-        "DIPTODEEPBISWAS",
-        "SOUMYABRATABHATTACHARJEE",
-        "SWARNADEEPNASKAR",
-        "SURJENDUROY",
-        "AGNIHOTRANATH",
-        "ABHINABAGHOSH",
-        "TAMANNADALUKA",
-        "ROOPKATHADEY",
-        "AHONADEY",
-        "SHUVANGEEGHOSH",
-        "SHUBHAJITROYCHOWDHURY",
-        "NAHIDAKHTAR",
-        "SHUVANGEEGHOSH",
-        "ARATRIKADUTTA",
-        "DIBYASHREETAPADAR",
-        "SOURISHDATTA",
-        "SAYANIDAS",
-        "SAYANIDAS",
-        "BHASWATIPAL",
-        "AADITYABHATTACHARJEE",
-        "DDARSHKOCHAR",
-        "EESHANKARMAKAR",
-        "SOURAKANTIHALDAR",
-        "SPANDANBASU",
-        "PARTHIVPAL",
-        "ANIMESHARYAN",
-        "KHOUNISDAS",
-        "VEDANTAMBANI",
-        "MAYUKHMUKHERJEE",
-        "AMRITAMAJUMDER",
-        "SUVAYANMAJUMDAR",
-        "ADVIKPAL",
-        "SHUBAM.NVINOD",
-        "ASMITCHAKRABORTY",
-        "KAIRAVICHAKRABORTY",
-        "ANWITABOSE",
-        "RADHIKAMUKHERJEE",
-        "RADHIKAMUKHERJEE",
-        "ADITYAKAUSHAL",
-        "MAYUKHNAG",
-        "ABHIKGARAI",
-        "SHAMEEKDALAL",
-        "RISHIKANTMANDAL",
-        "SAMPREETROY",
-        "MUDITKEJRIWAL",
-        "NAITIKCHATTARAJ",
-        "ARIGHNADUTTA",
-        "PRAKRITIROY",
-        "ANWITARAY",
-        "PRIYANSHUMURARI",
-        "ANURINIMUKHERJI",
-        "ANKUSHROY",
-        "SYEDHAADIHAMZAASDAUQUE",
-        "RUDRANSHISINGH",
-        "RUDRANSHISINGH",
-        "RUDRANSHISINGH",
-        "AGASTYAGUPTA",
-        "ANIKETPANDEY",
-        "BISHALPAUL",
-        "SAMRIDDHASARKAR",
-        "JAINILDOSHI",
-        "DATYATREYARAY",
-        "ABHILASHAHALDAR",
-        "AKSHATKUMARSHAW",
-        "SOURYYAMUKHOPADHYAY",
-        "SHIBASISBAGCHI",
-        "SPRIHAMUKHERJEE",
-        "SAMYABANERJEE",
-        "SRINIKASHEE",
-        "KAVYAAGARWAL",
-        "NAVONILBANERJEE",
-        "SWARNADEEPNASKAR",
-        "SOUPTIKDAM",
-        "AGNIHOTRANATH",
-        "ARATRIKADUTTA",
-        "SAMPREETROY",
-        "SUMITGHOSH",
-        "ABHIJOYDEY",
-        "MD.AYMANSHEIKH",
-        "MAYUKHSARDAR",
-        "SHRIYANSSBEHERA",
-        "KRISHNIKACHANDA",
-        "RISHABHDAS",
-        "SOUMYABRATABHATTACHARJEE",
-        "SHUMAIRASAIF",
-        "TAMANNADALUKA",
-        "PIYUSHMOHAPATRA",
-        "KAVYAJHA",
-        "ISHANMANDAL",
-        "ARNAVSINGH",
-        "RADHIKAMUKHERJEE",
-        "SAHANAMITRA",
-        "SUPRATEEKDHAR",
-        "VEDANTAMBANI",
-        "PRAKRITIROY",
-        "DEBOMOYPATRA",
-        "LOYMITRA",
-        "SPANDANBASU",
-        "TOSHANISARADAKAYAL",
-        "SRISTISAH",
-        "RICHIKROYGOSTHIPATY",
-        "BORNNIKBASU",
-        "HARSHITGUPTA",
-        "HARSHITGUPTA",
-        "SAYANTANMUKHERJEE",
-        "SUDITISAHA",
-        "SAMPADADASH",
-        "SURJAYANBANERJEE",
-        "SAMYAKPADHY",
-        "RAJANYACHATTERJEE",
-        "ARYANMITRA",
-        "ANISHABARIK",
-        "SRISTITANTI",
-        "ANWITABOSE",
-        "SAGNIKNASKAR",
-        "JISHNUMAITI",
-        "ANANTHSURESH",
-        "SHUVANGEEGHOSH",
-        "ARYANDAS",
-        "BIRAJAPRASADPRADHAN",
-        "PRAKRITISENSHARMA",
-        "ABHINEETASH",
-        "ARNESHCHAKRABARTI",
-        "ISHANMANDAL",
-        "PREETISASMAL",
-        "ISHANMANDAL",
-        "SAMYARAJCHOWDHURY",
-        "ATRAYUCHAKRABORTY",
-        "SOUMILIDEY",
-        "ARYADITYAGHOSH",
-        "SHREYANSHKOTHARI",
-        "ISHAANBISWAS",
-        "ARYAKASIKDAR",
-        "ANUBHAVGUHA",
-        "AYANTIKAMAZUMDER",
-        "SHREYABANERJEE",
-        "PRITHURAJSAHA",
-        "ISHAANSENAPATII",
-        "DEBANKUSHKUNDU",
-        "JAIHIRAWAT",
-        "SHLOKAGARWAL",
-        "ANKITKEJRIWAL",
-        "NIHARIKAPAUL",
-        "FARIAFAIZ",
-        "SMYANSRIVASTAVA",
-        "DIPTODEEPBISWAS",
-        "AAYUSHSINGH",
-        "SHRESHTHADAS",
-        "SUJATRODEBNATH",
-        "SHRINJAYBOSE",
-        "SHREYANSHCHAUDHURI",
-        "SOHAMPODDAR",
-        "UTSAVACHAR",
-        "ARADHANADASSARMA",
-        "RUPSABASUROY",
-        "MDALIQAMAR",
-        "SARTHAKROY",
-        "ABHILASHROY",
-        "RISHWANCHANDA",
-        "SRISTISAH",
-        "SHELLYDASHORA",
-        "ADITYANARAYANBASU",
-        "VAIDEHITANEJA",
-        "KINGKINIDAS",
-        "SHAYORIBHATTACHARYA",
-        "ANUSHKASENAPATI",
-        "ANUSHKASENAPATI",
-        "RUDRANSISHBHATTACHARYA",
-        "HARSHILRUPCHANDANI",
-        "SAMBITSARDAR",
-        "SWAPNILBASU",
-        "SOUSHREECHAKRABORTY",
-        "PRAYASHPROTIMGOSWAMI",
-        "TANISHKASINHA",
-        "SRINIKMANDAL",
-        "SATWIKNAG",
-        "IPSITAROY",
-        "ADIYAROY",
-        "ARIJITGHOSH",
-        "ARIJITGHOSH",
-        "AINESHBANERJEE",
-        "SYEDRAHILAHMED",
-        "AVANINDRACHAKRABORTY",
-        "ISHAANBANERJEE",
-        "RAJVEERSINGH",
-        "SHREYABARDHAN",
-        "PADMANAVAMUKHERJEE",
-        "SUDIKSHACHOUDHURY",
-        "JAGRITICHAKRABARTI",
-        "RAMONKITBHATTACHARYYA",
-        "ADRIJAMAJUMDER",
-        "SHREYASHIJHA",
-        "ANUSKAAGHOSH",
-        "SRIJANBANDYOPADHYAY",
-        "ANIKETDINDA",
-        "SIDDHARTHDUTTA",
-        "ARYANSENGUPTA"
-    ];
+    const namesArray =  JSON.parse(gibnames());
     s=0
     
     for(var i =0;i<(namesArray.length);i++){
@@ -246,13 +31,20 @@ app.post('/naam',(req,res)=>{
         if (namesArray[i]== naam){
             
             loggedname().then((deets)=>{
+                
                 arr=(deets.split('\r'))
-                console.log(arr[arr.length-2],arr.length)
+                //console.log(arr[arr.length-2],arr.length)
+                if (arr[0].includes('FALSE'))
+                    {
+                        res.sendFile(path.join(__dirname + '/actual.html'));
+                        s=1
+                        logname(naam)
+                        return}
                 f=0
                 for(var j=1;j<arr.length;){
                     //console.log(arr[j].substring(1),naam)
                     //console.log(arr[j])
-                    console.log('ll')
+                   // console.log('ll')
                     if (naam==arr[j]||naam==arr[j].substring(1))
                        { //console.log(arr[j],j,'12344')
                         f=1
@@ -288,14 +80,14 @@ app.post('/tabchange',(req,res)=>{
     
     naam = ((req.body.name).toUpperCase()).replace(/\s/g, '');
     loggedname().then((deets)=>{
-    console.log(naam)
+    //console.log(naam)
     if (deets.includes(naam)){
-        log(req.body.name+" ran")
+        log(naam+" ran")
    
     lognames().then((names)=>{
-
+//console.log(names)
 if (names.includes(naam)){
-        log(req.body.name+" ran")
+        
     res.send('bad')
 }
     else
@@ -333,6 +125,27 @@ if (names.includes(naam)){
 
 
 
+
+
+
+   
+function gibnames(){
+  return  fs.readFileSync('names.json', 'utf-8')
+    
+      
+      
+        // Now you can work with the parsed JSON object
+      
+    
+}    
+
+
+
+
+
+
+
+    
 
 
 
