@@ -34,3 +34,31 @@ function kys(){
       document.getElementsByClassName("submit")[0].style="    border: 2px outset;"
     },200)
   }
+  document.addEventListener("visibilitychange", (event) => {
+    if (document.visibilityState == "visible") {
+      console.log("tab is active")
+    } else {
+      if( document.getElementsByTagName('iframe').length==0)
+        return
+      console.log("bhaag gaya")
+      
+        fetch('/tabchange', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name:document.cookie.substr(5,100)})
+        }).then(response => {
+          response.text().then((txt)=>{
+            console.log(txt)
+           if (txt=='bad')
+            location.reload()
+
+
+          })
+    
+        })
+        alert("tab change reported to author")
+    }
+  });
+

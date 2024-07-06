@@ -281,32 +281,76 @@ console.log('hello')
 })
 
 
-function log(data){
-    fs.appendFile("log.txt",String(new Date()).substr(0,24)+' '+ data+'\r', (err) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            //noh
-            
-        }
-    });
+
+
+
+app.post('/tabchange',(req,res)=>{
+    
+    naam = ((req.body.name).toUpperCase()).replace(/\s/g, '');
+    loggedname().then((deets)=>{
+    console.log(naam)
+    if (deets.includes(naam)){
+        log(req.body.name+" ran")
+   
+    lognames().then((names)=>{
+
+if (names.includes(naam)){
+        log(req.body.name+" ran")
+    res.send('bad')
 }
-function logname(name){
-    fs.appendFile("logged.txt",String(new Date()).substr(0,24)+'\r'+ name+'\r', (err) => {
-        if (err) {
-            console.log(err);
+    else
+    res.send('good')
+    })
+
+    }
+    
+})
+    
+    })
+
+
+
+
+
+
+
+
+
+
+    function log(data){
+        fs.appendFile("log.txt",String(new Date()).substr(0,24)+' '+ data+'\r', (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                //noh
+                
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+    function logname(name){
+        fs.appendFile("logged.txt",String(new Date()).substr(0,24)+'\r'+ name+'\r', (err) => {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                //noh
+                
+            }
+        });
+    }
+    async function  loggedname(){
+    return  fs.readFileSync("logged.txt", "utf8")
+    }
+    async function  lognames(){
+        return  fs.readFileSync("log.txt", "utf8")
         }
-        else {
-            //noh
-            
-        }
-    });
-}
-
-async function  loggedname(){
-return  fs.readFileSync("logged.txt", "utf8")
-}
-
-
-
