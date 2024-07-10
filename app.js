@@ -14,7 +14,9 @@ app.use(express.static('src'))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/src/index.html'));
 });
-
+app.get('/logs1234',(req,res)=>{
+      res.sendFile(path.join(__dirname + 'log.txt'));
+})
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
 });
