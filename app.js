@@ -88,7 +88,10 @@ app.post('/tabchange',(req,res)=>{
 //console.log(names)
 if (names.includes(naam)){
         
-    res.send('bad')
+   // res.send('bad')
+   //uncomment the upper line to log off users on 2nd tab change attempt and comment the lower one
+    res.send('good')
+    
 }
     else
     res.send('good')
