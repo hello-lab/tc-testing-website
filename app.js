@@ -74,7 +74,12 @@ app.post('/naam',(req,res)=>{
 console.log('hello')
 })
 
-
+app.post('/timerchange',(req,res)=>{
+     naam = ((req.body.name).toUpperCase()).replace(/\s/g, '');
+    log(req.body.name+" changed timer")
+    
+    
+    })
 
 
 
